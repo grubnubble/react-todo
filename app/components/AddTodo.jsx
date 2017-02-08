@@ -10,7 +10,6 @@ var AddTodo = React.createClass({
 			this.props.onAddTodo(strTodo);
 		} else {
 			this.refs.todoText.focus();
-			this.props.onAddTodo("No text entered");
 		}
 	},
 	render: function () {

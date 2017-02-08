@@ -23,7 +23,7 @@ describe('AddTodo', () => {
 		expect(spy).toHaveBeenCalledWith('Hello there');
 	});
 
-	it('should alert with "No text entered" if empty string entered', () => {
+	it('should refocus cursor to input if empty string entered', () => {
 		var spy = expect.createSpy();
 		var addTodo = TestUtils.renderIntoDocument(<AddTodo onAddTodo={spy}/>);
 		var $el = $(ReactDOM.findDOMNode(addTodo));
@@ -31,6 +31,6 @@ describe('AddTodo', () => {
 		addTodo.refs.todoText.value = '';
 		TestUtils.Simulate.submit($el.find('form')[0]);
 
-		expect(spy).toHaveBeenCalledWith('No text entered');
+		expect(spy).toNotHaveBeenCalled();
 	});
 });
