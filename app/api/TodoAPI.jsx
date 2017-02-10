@@ -26,6 +26,9 @@ module.exports = {
 			return [];
 		}
 	},
+	removeTodo: function (todo) {
+		//how to remove just one item from the todos array?
+	},
 	filterTodos: function (todos, showCompleted, searchText) {
 		var filteredTodos = todos;
 
